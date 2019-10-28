@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     $('#hidden').hide();
     $('#tabela').hide();
-    $('#dialog-form').hide();
     $('#form_container').hide();
 
     var auth2;
@@ -16,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
             'onsuccess': onSuccess,
             'onfailure': onFailure
         });
-
     }
 
     function signOut() {
@@ -24,9 +22,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         auth2.signOut().then(function () {
          console.log('User signed out.');
         });
-        console.log("Teste.");
 
-        $('#dialog-form').hide();
         $('#form_container').hide();
       }
 
@@ -35,18 +31,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         if (auth2.isSignedIn.get()) {
             var profile = auth2.currentUser.get().getBasicProfile();
-            console.log('ID: ' + profile.getId());
-            console.log('Full Name: ' + profile.getName());
-            console.log('Given Name: ' + profile.getGivenName());
-            console.log('Family Name: ' + profile.getFamilyName());
-            console.log('Image URL: ' + profile.getImageUrl());
-            console.log('Email: ' + profile.getEmail());
-            console.log("teste");
 
             $('#nome').val(profile.getName());
             $('#email').val(profile.getEmail());
 
-            $('#dialog-form').show();
             $('#form_container').show();
           } else {
               console.log("não logado");
@@ -59,14 +47,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
     function onSuccess(googleUser) {
         // Recuperando o profile do usuário
         var profile = googleUser.getBasicProfile();
-        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-        console.log("Name: " + profile.getName());
-        console.log("Image URL: " + profile.getImageUrl());
-        console.log("Email: " + profile.getEmail());
-    
+        // console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        // console.log("Name: " + profile.getName());
+        // console.log("Image URL: " + profile.getImageUrl());
+        // console.log("Email: " + profile.getEmail());
+
         // Recuperando o token do usuario. Essa informação você necessita passar para seu backend
         var id_token = googleUser.getAuthResponse().id_token;
-        console.log("ID Token: " + id_token);
+        // console.log("ID Token: " + id_token);
 
         checkLogin();
     }
@@ -77,8 +65,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     function onFailure(error) {
         console.log(error);
     }
-
-    
 
     $.ajax({
         type: "GET",
