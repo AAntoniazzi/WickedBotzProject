@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="google-signin-client_id" content="491341319401-jocqpnin14ih7f6m8uf2adj2rl78j1os.apps.googleusercontent.com">
+    <title>Formulário de Dados de Robôs</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="view.css" media="all">
+    
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <script type="text/javascript" src="view.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="formSerializer.js" defer></script>
+    <script type="text/javascript" src="form.js" async defer></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body id="main_body">
+    <div id="meu-botao"></div>
+    <a href="#" id="signOutLink">Sign out</a>
+    <div id="dialog-form" title="Edição de Robô">
+        <form>
+            <div class="form-group">
+ 
+                <div>
+                    <label class="description" for="roboid">Nome do Robo </label>
+                    <p id="robo"></p>
+                </div>
+
+                <div>
+                    <label class="description" for="categoria">Categoria </label>
+                    <select class="form-control" id="categoria" name="categoria">
+                        <option value="" selected="selected"></option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="arma">Tipo de Arma </label>
+                    <select class="form-control" id="arma" name="arma">
+                        <option value="" selected="selected"></option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="qtdarma"> Quantidade de Armas </label>
+                    <input id="qtdarma" name="qtdarma" class="form-control" type="text" maxlength="255" value="" />
+                </div>
+
+                <div>
+                    <label for="roda">Modelo de Rodas </label>
+                    <input id="roda" name="roda" class="form-control" type="text" maxlength="255" value="" />
+                </div>
+
+                <div>
+                    <label for="qtdroda">Quantidade de Rodas </label>
+                    <input id="qtdroda" name="qtdroda" class="form-control" type="text" maxlength="255" value="" />
+                </div>
+
+                <div>
+                    <label for="carenagem">Material da Carenagem </label>
+                    <input id="carenagem" name="carenagem"class="form-control" type="text" maxlength="255" value="" />
+                </div>
+
+                <div>
+                    <label for="motor">Modelo dos motores </label>
+                    <input id="motor" name="motor" class="form-control" type="text" maxlength="255" value="" />
+                </div>
+
+                <div>
+                    <label for="qtdmotor">Quantidade de Motores </label>
+                    <input id="qtdmotor" name="qtdmotor" class="form-control" type="text" maxlength="255" value="" />
+                </div>
+            </div>
+
+            <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+        </form>
+    </div>
+
+    <div id="form_container" class="container">
+        <form id="form_robo">
+            <div class="form_description">
+                <h2>Formulário de Dados de Robôs</h2>
+                <p>Bem vindo ao Formulário de Dados de Robôs da WickedBotz.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <label for="nome">Nome </label>
+                    <input id="nome" name="nome" class="form-control" type="text" maxlength="255" value="" />
+                </div>
+
+                <div class="col-md-6 col-sm-12">
+                    <label for="email">Email </label>
+                    <input id="email" name="email" class="form-control" type="text" maxlength="255" value="" />
+                </div>
+
+                <div class="col-md-6 col-sm-12">
+                    <label  for="instituicao">Instituição de Ensino </label>
+                    <input id="element_3" name="instituicao" class="form-control" type="text" maxlength="255" value="" />
+                </div>
+
+                <div class="col-md-6 col-sm-12">
+                    <label  for="equipe">Nome da Equipe </label>
+                    <select class="form-control" id="element_4" name="equipe">
+                        <option value="" selected="selected">Selecione</option>
+                    </select>
+                </div>
+            </div>
+
+        </form>
+
+        <div id="tabela">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Categoria</th>
+                        <th scope="col">Ação</th>
+                    </tr>
+                </thead>
+
+                <tbody id="table_body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
